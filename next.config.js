@@ -1,22 +1,18 @@
 /** @type {import('next').NextConfig} */
-const withTM = require('next-transpile-modules')(['antd-mobile'])
-{
-  experimental: {
-    appDir: true
-  }
-}
-module.exports = withTM({
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/:path*',
-  //       destination: 'http://localhost:4000/:path*',
-  //     },
-  //   ]
-  // },
+  experimental: {
+    transpilePackages: ['antd-mobile'],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:4000/:path*',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
@@ -26,4 +22,6 @@ module.exports = withTM({
       },
     ]
   },
-})
+}
+
+module.exports = nextConfig

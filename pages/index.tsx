@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next'
 
 const IndexPage: NextPage = () => {
-  return <h1>hellow, world</h1>;
-};
+  return <></>
+}
 
-export default IndexPage;
+export default IndexPage
