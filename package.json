@@ -8,6 +8,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.8.6",
+    "@tanem/react-nprogress": "^5.0.24",
     "ahooks": "^3.7.2",
     "animate.css": "^4.1.1",
     "antd": "^4.23.4",

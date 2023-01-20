@@ -1,7 +1,6 @@
-import type { ChangeEvent } from 'react'
-import { useEffect, useRef } from 'react'
+import { ChangeEvent, DependencyList, useCallback, useEffect, useRef } from 'react'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-
+import { Updater } from 'use-immer'
 import type { AppDispatch, AppState } from './store'
 
 export const useForm =
@@ -44,3 +43,12 @@ export const useInterval = (callback: Function, delay: number) => {
 export const useAppDispatch = () => useDispatch<AppDispatch>()
 
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector
+
+export const useHandleObjectData = <TD>(setData: Updater<TD>, deps: DependencyList = []) => {
+  return useCallback((key: keyof TD, value: TD[keyof TD]) => {
+    setData((draft) => {
+      // @ts-ignore
+      draft[key] = value
+    })
+  }, deps)
+}

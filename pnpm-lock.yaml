@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ant-design/icons': ^4.7.0
   '@reduxjs/toolkit': ^1.8.6
+  '@tanem/react-nprogress': ^5.0.24
   '@types/lodash': ^4.14.186
   '@types/node': 18.0.3
   '@types/react': 18.0.15
@@ -37,6 +38,7 @@ specifiers:
 dependencies:
   '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
   '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
+  '@tanem/react-nprogress': 5.0.24_biqbaboplfbrettd7655fr4n2y
   ahooks: 3.7.4_react@18.2.0
   animate.css: 4.1.1
   antd: 4.23.4_biqbaboplfbrettd7655fr4n2y
@@ -116,6 +118,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
+    dev: false
+
+  /@babel/runtime/7.20.7:
+    resolution: {integrity: sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
     dev: false
 
   /@ctrl/tinycolor/3.4.1:
@@ -413,6 +422,18 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.4.1
+    dev: false
+
+  /@tanem/react-nprogress/5.0.24_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-BHTc35Q3zhlxPyED6JCs5kraGqJZdh9Nk69+ZZ6bH/AkUUBH0nD8VBnlVATFrSC6iGJcd5wiY1M6xFNedeOMjg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.20.7
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@types/hoist-non-react-statics/3.3.1:
@@ -2184,6 +2205,10 @@ packages:
     resolution: {integrity: sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==}
     dependencies:
       '@babel/runtime': 7.19.0
+    dev: false
+
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: false
 
   /regenerator-runtime/0.13.9:
