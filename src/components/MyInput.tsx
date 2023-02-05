@@ -1,18 +1,8 @@
 import { NextComponentType } from 'next'
 
-type MyInputPropsType = {
-  classNameInput?: string
-  classNameSpan?: string
-  placeholder: string
-  labelName?: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => any
-  rules?: {
-    required?: boolean
-    message?: string
-  }[]
-}
 
-const MyInput: NextComponentType<{}, {}, MyInputPropsType> = (props) => {
+
+const MyInput: NextComponentType<{}, {}, MYCOMPONENT.MyInputPropsType> = (props) => {
   const classNameInput = props.classNameInput ? props.classNameInput : 'input input-bordered w-3/5'
   const classNameSpan = props.classNameSpan ? props.classNameSpan : 'w-2/5'
   const unqualified = props.rules?.filter((item) => !item.required)[0]

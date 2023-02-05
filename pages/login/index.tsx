@@ -1,6 +1,6 @@
 import { Toast } from 'antd-mobile'
 import Link from 'next/link'
-import { ReactElement } from 'react'
+import { ReactElement, startTransition } from 'react'
 import { useImmer } from 'use-immer'
 import { useHandleObjectData } from '../../src/app/hooks'
 import MyInput from '../../src/components/MyInput'
@@ -27,7 +27,9 @@ const LoginPage: NextPageWithLayout = () => {
             labelName="账号"
             placeholder="请输入账号"
             onChange={(e) => {
-              handleData('account', e.target.value)
+              startTransition(() => {
+                handleData('account', e.target.value)
+              })
             }}
           />
           <MyInput
@@ -35,7 +37,9 @@ const LoginPage: NextPageWithLayout = () => {
             labelName="密码"
             placeholder="请输入密码"
             onChange={(e) => {
-              handleData('password', e.target.value)
+              startTransition(() => {
+                handleData('password', e.target.value)
+              })
             }}
           />
           <div className="flex items-center justify-between">

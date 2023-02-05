@@ -1,7 +1,7 @@
 import { DatePicker, Toast } from 'antd-mobile'
 import moment from 'moment'
 import Link from 'next/link'
-import { ReactElement, useState } from 'react'
+import { ReactElement, startTransition, useState } from 'react'
 import { useImmer } from 'use-immer'
 import { useHandleObjectData } from '../../src/app/hooks'
 import MyInput from '../../src/components/MyInput'
@@ -37,7 +37,9 @@ const SignPage: NextPageWithLayout = () => {
             labelName="账号"
             placeholder="请输入账号"
             onChange={(e) => {
-              handleData('account', e.target.value)
+              startTransition(() => {
+                handleData('account', e.target.value)
+              })
             }}
           />
           <MyInput
@@ -48,7 +50,9 @@ const SignPage: NextPageWithLayout = () => {
             labelName="密码"
             placeholder="请输入密码"
             onChange={(e) => {
-              handleData('password', e.target.value)
+              startTransition(() => {
+                handleData('password', e.target.value)
+              })
             }}
           />
           <MyInput
@@ -59,7 +63,9 @@ const SignPage: NextPageWithLayout = () => {
             labelName="确认密码"
             placeholder="请确认密码"
             onChange={(e) => {
-              setPa(e.target.value)
+              startTransition(() => {
+                setPa(e.target.value)
+              })
             }}
           />
           <MyInput
@@ -67,7 +73,9 @@ const SignPage: NextPageWithLayout = () => {
             labelName="邮箱"
             placeholder="请输入邮箱"
             onChange={(e) => {
-              handleData('email', e.target.value)
+              startTransition(() => {
+                handleData('email', e.target.value)
+              })
             }}
           />
           <div className="flex items-center justify-between">
@@ -77,7 +85,9 @@ const SignPage: NextPageWithLayout = () => {
                 type="checkbox"
                 className="toggle toggle-secondary mr-2 ml-2"
                 onClick={() => {
-                  handleData('sex', !data.sex)
+                  startTransition(() => {
+                    handleData('sex', !data.sex)
+                  })
                 }}
               />
               <span>女</span>
@@ -86,7 +96,9 @@ const SignPage: NextPageWithLayout = () => {
               <button
                 className="btn btn-sm btn-active btn-secondary mr-2 "
                 onClick={() => {
-                  setVisible(true)
+                  startTransition(() => {
+                    setVisible(true)
+                  })
                 }}>
                 生日
               </button>
@@ -98,7 +110,9 @@ const SignPage: NextPageWithLayout = () => {
                 defaultValue={data.birthday}
                 max={data.birthday}
                 onConfirm={(val) => {
-                  handleData('birthday', val)
+                  startTransition(() => {
+                    handleData('birthday', val)
+                  })
                 }}>
                 {(value) => moment(value).format('YYYY-MM-DD')}
               </DatePicker>
