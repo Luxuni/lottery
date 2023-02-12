@@ -1,7 +1,5 @@
 import { NextComponentType } from 'next'
 
-
-
 const MyInput: NextComponentType<{}, {}, MYCOMPONENT.MyInputPropsType> = (props) => {
   const classNameInput = props.classNameInput ? props.classNameInput : 'input input-bordered w-3/5'
   const classNameSpan = props.classNameSpan ? props.classNameSpan : 'w-2/5'
